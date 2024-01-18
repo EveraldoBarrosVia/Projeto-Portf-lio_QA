@@ -1,4 +1,4 @@
-name: Deploy to surge
+name: Deploy to Surge
 
 on:
   push:
@@ -7,13 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  runMultipleCommands:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14.x'
@@ -21,5 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy
-        run: npm install --global surge && ./ surge --domain cooperative-poison.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
+      - name: Deploy to Surge
+        npm install --global surge && ./ surge --domain cooperative-poison.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
