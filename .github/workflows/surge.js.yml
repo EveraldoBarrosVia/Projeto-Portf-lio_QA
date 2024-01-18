@@ -22,4 +22,4 @@ jobs:
         run: npm install
 
       - name: Deploy to Surge
-        run: npm install --global surge && ./ surge --domain everaldo.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
+        run: npm install --global surge && surge ./ --domain everaldo.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
