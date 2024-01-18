@@ -1,4 +1,5 @@
 name: Deploy to surge
+
 on:
   push:
     branches: [main]
@@ -21,4 +22,4 @@ jobs:
         run: npm install
 
       - name: Deploy
-        run: npm install --global surge && ./ --domain cooperative-poison.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
+        run: npm install --global surge && ./ surge --domain cooperative-poison.surge.sh --token a163ceda0ff44eedd3b38fafcd63dece
